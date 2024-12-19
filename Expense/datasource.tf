@@ -18,3 +18,9 @@ data "aws_ami" "expense" {
     }
   
 }
+
+
+data "aws_route53_zone" "expense" {
+  name         = "kotte.site"
+  private_zone = false
+}

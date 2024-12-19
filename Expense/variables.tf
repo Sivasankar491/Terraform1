@@ -11,3 +11,8 @@ variable "common_tags" {
         terraform = "True"
     }
 }
+
+variable "zone_name" {
+    type = string
+    default = "kotte.site"
+}
