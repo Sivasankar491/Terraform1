@@ -1,3 +1,3 @@
 output "instance_info" {
-    value = aws_instance.test 
+    value = aws_instance.expense
 }
