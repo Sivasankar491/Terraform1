@@ -12,7 +12,7 @@ resource "aws_instance" "expense" {
 }
 
 resource "aws_security_group" "allow_ssh" {
-  name        = "allow_ssh"
+  name        = "Allow_SSH"
   description = "Allow SSH inbound traffic"
   
   ingress {
