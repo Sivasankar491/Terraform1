@@ -5,10 +5,10 @@ resource "aws_instance" "test" {
 
   tags = merge(
     var.common_tags,
-        {
-            Name = "Test"
-        }
-  ` ) 
+    {
+        Name = "Test"
+    }
+  ) 
 }
 
 resource "aws_security_group" "allow_ssh" {
@@ -30,10 +30,10 @@ resource "aws_security_group" "allow_ssh" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-    tags = merge(
-        var.common_tags,
-            {
-                Name = "Test"
-            }
-  `      )
+  tags = merge(
+    var.common_tags,
+    {
+        Name = "Test"
+    }
+  ) 
 }
