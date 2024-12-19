@@ -1,3 +1,3 @@
-output "instnce_info" {
-  value = aws_instance.expense
-}
+# output "instnce_info" {
+#   value = aws_instance.expense
+# }
