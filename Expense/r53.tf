@@ -4,17 +4,8 @@ resource "aws_route53_record" "expense" {
   name    = var.instance_names[count.index] == "frontend" ? var.zone_name : "${var.instance_names[count.index]}.${var.zone_name}"
   type    = "A"
   ttl     = 1
-  records = var.instance_names[count.index] == "frontend" ? [aws_instance.expense.public_ip] : [aws_instance.expense.private_ip]
+  records = var.instance_names[count.index] == "frontend" ? [aws_instance.expense[count.index].public_ip] : [aws_instance.expense[count.index].private_ip]
   allow_overwrite = true
 }
 
-# resource "aws_route53_record" "expense" {
-#   count   = length(var.instance_names)
-#   zone_id = var.zone_id
-#   #backend.daws81s.online
-#   name            = var.instance_names[count.index] == "frontend" ? var.domain_name : "${var.instance_names[count.index]}.${var.domain_name}"
-#   type            = "A"
-#   ttl             = 1
-#   records         = var.instance_names[count.index] == "frontend" ? [aws_instance.terraform[count.index].public_ip] : [aws_instance.terraform[count.index].private_ip]
-#   allow_overwrite = true
-# }
+
