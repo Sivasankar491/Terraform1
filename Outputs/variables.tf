@@ -13,7 +13,8 @@ variable "common_tags" {
     type = map
     default = {
         Environment = "UAT"
-        component = "Backend"
+        terraform = "True"
+        Project = "Expense"
     }
   
 }
