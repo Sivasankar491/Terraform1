@@ -4,24 +4,22 @@ variable "ami_id" {
 }
 
 variable "ingress_rules" {
-    type = list(map)
+    type = list
     default = [
-        ingress {
+        {
             description = "SSH from anywhwere"
             from_port   = 22
             to_port     = 22
             protocol    = "tcp"
             cidr_blocks = ["0.0.0.0/0"]
         },
-        
-        ingress {
+
+         {
             description = "http from anywhere"
             from_port   = 80
             to_port     = 80
             protocol    = "tcp"
             cidr_blocks = ["0.0.0.0/0"]
         }
-
     ]
-  
 }
